@@ -39,7 +39,7 @@ body{
 }
 
 header img {
-    padding-top: 50px;
+    padding-top: 30px;
     
 }
 header {
@@ -57,6 +57,78 @@ header li {
     padding-bottom: 15px;
     
 }
+
+header img {
+    width: 250px;
+    display: flex;
+}
+
+/* BOTON DE NAV*/
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 4.7em;
+    right: 2.5em;
+    z-index: 9999;
+    background-image: url(img/menu_mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 2em;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;   
+}
+
+/*Selector avanzado*/
+.mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url(img/menu_close.svg);
+}
+
+
+/*-------------------------------------------------*/
+
+/* BARRA DE NAVEGACION*/
+
+.nav-principal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 30%;
+    z-index: 1;
+
+    background-color: var(--bkn-nav-noblur);
+    
+    padding: min(20vh, 8em) 0;  
+
+    transform: translateX(100%);
+    
+}
+
+.nav-principal[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+
+
+
+
+
+nav li {
+    
+    margin: min(10vh, 4em) 0;
+}
+
 nav a:link {
     color: var(--color-base);
 }
@@ -72,6 +144,8 @@ nav a:hover {
 nav a:active {
     color: var(--bkn-gallery)
 }
+
+/* ------------------------------------------------------*/
 
 main {
     width: min(1200px, 100%);
@@ -195,4 +269,29 @@ footer a:hover {
 }
 
 
+@media screen and (min-width: 480px) {
+
+    header img {
+        margin: 0 auto;
+
+
+    }
+
+    nav {
+        position: static;
+        display: inline;
+        padding: 0;
+    }
+    
+    nav li {
+        display: inline;
+        margin: 10px;
+
+    }
+
+    #libros {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  
+    }
+
+}
 

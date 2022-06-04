@@ -7,9 +7,14 @@
     <title>La librería</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/dae18a0946.js" crossorigin="anonymous"></script>
+    <script src="boton-nav.js" defer></script>
 </head>
 <body>
     <header>
+        <button class="mobile-nav-toggle" aria-controls="nav-principal" aria-expanded="false" >
+            <span class="sr-only">Menu</span>
+        </button>
+
         <div><a href="index.html"><img src="img/logo.svg" alt="logolibreria"></a></div>
         <form class="buscar" action="" method="get">
             <label for="busqueda"></label>
@@ -17,7 +22,7 @@
             <button id="buscar" name="buscar" aria-label="buscar contenido"><i class="fa-solid fa-magnifying-glass"></i> </button>
         </form>
         <nav>
-         <ul>
+         <ul class="nav-principal" data-visible="false">
              <li><a href="#">Catálogo</a></li>
              <li><a href="#">Sobre Nosotros</a></li>
              <li><a href="#">Contacto</a></li>
